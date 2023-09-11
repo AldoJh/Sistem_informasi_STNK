@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FacturApp</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Print JS -->
+    <link rel="stylesheet" href="../assets/css/print.min.css" />
+  </head>
+  <body style="background-color: #f5f5f5;">
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <!-- Navbar -->
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <span class="fs-5 d-none d-sm-inline">Navbar Logo</span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+              <li class="nav-item">
+                <a href="#" class="nav-link align-middle px-0 text-white"> <i class="fs-5 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span> </a>
+              </li>
+              <li class="nav-item">
+                <a href="#submenu1" class="nav-link align-middle px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal"> <i class="fs-5 bi-card-text"></i> <span class="ms-1 d-none d-sm-inline">Pembuatan Faktur</span> </a>
+              </li>
+              <li class="nav-item">
+                <a href="#submenu2" class="nav-link align-middle px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal2"> <i class="fs-5 bi-pen"></i> <span class="ms-1 d-none d-sm-inline"> Status Polda</span> </a>
+              </li>
+              <li class="nav-item">
+                <a href="#submenu3" class="nav-link align-middle px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal3"> <i class="fs-5 bi-pen"></i> <span class="ms-1 d-none d-sm-inline">Status Bayar</span> </a>
+              </li>
+              <li>
+                <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white"> <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Nomor Polisi & STNK</span> </a>
+                <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal4"> <span class="d-none d-sm-inline">Input Nopol</span></a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0 text-white" class="nav-link px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal5"> <span class="d-none d-sm-inline">Cetak tanda terima STNK</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#submenu5" class="nav-link align-middle px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal6"> <i class="fs-5 bi-pen"></i> <span class="ms-1 d-none d-sm-inline">Tagihan</span> </a>
+              </li>
+              <li>
+                <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white"> <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">BPKB</span> </a>
+                <ul class="collapse nav flex-column ms-1" id="submenu6" data-bs-parent="#menu">
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal7"> <span class="d-none d-sm-inline">Input BPKB</span></a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0 text-white" class="nav-link px-0 text-white" data-bs-toggle="modal" data-bs-target="#myModal8"> <span class="d-none d-sm-inline">Cetak tanda terima BPKB</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown pb-4">
+              <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="profile" width="30" height="30" class="rounded-circle" />
+                <span class="d-none d-sm-inline mx-1">Jhon Doe</span>
+              </a>
+              <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="../index.html">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Akhir Navbar -->
+
+        <!-- Content -->
+        <section class="col py-3">
+          <h4 style="margin-top: 14rem; line-height: 4rem;">Selamat Datang di <br/><span style="letter-spacing: 5px; font-size: 2em;"> CV. T R I J A Y A T A M A </span></h4>
+
+          <!-- Modals Pembuatan Faktur-->
+          <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Pembuatan Faktur</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Modal content goes here -->
+                  <form class="d-flex" style="font-size: small; gap: 1.5rem">
+                    <!-- Form 1 -->
+                    <div>
+                      <h4></h4>
+                      <label for="dataExcel" class="fw-bold">Import data excel</label>
+                      <input type="file" name="dataExcel" id="dataExcel" class="form-control mb-2" />
+
+                      <label for="tanggalInput" class="fw-bold">Tanggal Input</label>
+                      <input type="date" name="tanggalInput" id="tanggalInput" class="form-control mb-2" />
+
+                      <label for="tanggalInput" class="fw-bold">Tanggal Faktur</label>
+                      <input type="date" name="tanggalInput" id="tanggalInput" class="form-control mb-2" />
+
+                      <label for="noFaktur" class="fw-bold">No Faktur</label>
+                      <input type="number" name="noFaktur" id="noFaktur" class="form-control mb-2" />
+
+                      <label for="noDO" class="fw-bold">No DO</label>
+                      <input type="number" name="noDO" id="noDO" class="form-control mb-2" />
+
+                      <label for="KDealer" class="fw-bold">KDealer</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="dlrFaktur" class="fw-bold">Kd Dlr Faktur</label>
+                      <input type="text" name="dlrFaktur" id="dlrFaktur" class="form-control mb-2" />
+
+                      <label for="dealer" class="fw-bold">Dealer</label>
+                      <input type="text" name="dealer" id="dealer" class="form-control mb-2" />
+
+                      <label for="kotaDealer" class="fw-bold">Kota Dealer</label>
+                      <input type="text" name="kotaDealer" id="kotaDealer" class="form-control mb-2" />
+
+                      <label for="noSPK" class="fw-bold">No SPK</label>
+                      <input type="number" name="noSPK" id="noSPK" class="form-control mb-2" />
+                    </div>
+
+                    <!-- Form 2 -->
+                    <div>
+                      <label for="noRangka" class="fw-bold">No Rangka</label>
+                      <input type="number" name="noRangka" id="noRangka" class="form-control mb-2" />
+
+                      <label for="noMesin" class="fw-bold">No Mesin</label>
+                      <input type="number" name="noMesin" id="noMesin" class="form-control mb-2" />
+
+                      <label for="Type" class="fw-bold">Type</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="model" class="fw-bold">Model</label>
+                      <input type="text" name="model" id="model" class="form-control mb-2" />
+
+                      <label for="jenis" class="fw-bold">Jenis</label>
+                      <input type="text" name="jenis" id="jenis" class="form-control mb-2" />
+
+                      <label for="Warna" class="fw-bold">Warna</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="Slinder" class="fw-bold">Slinder</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="tahunBuat" class="fw-bold">Tahun Buat</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="tahunRakit" class="fw-bold">Tahun Rakit</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="bahanBakar" class="fw-bold">Bahan Bakar</label>
+                      <input type="text" name="bahanBakar" id="bahanBakar" class="form-control mb-2" />
+                    </div>
+
+                    <!-- Form 3 -->
+                    <div>
+                      <label for="Merk" class="fw-bold">Merk</label>
+                      <input type="text" name="Merk" id="Merk" class="form-control mb-2" />
+
+                      <label for="jumlahSB" class="fw-bold">Jumlah SB</label>
+                      <input type="number" name="jumlahSB" id="jumlahSB" class="form-control mb-2" />
+
+                      <label for="jumlahRoda" class="fw-bold">Jumlah Roda</label>
+                      <input type="number" name="jumlahRoda" id="jumlahRoda" class="form-control mb-2" />
+
+                      <label for="noTPT" class="fw-bold">No TPT</label>
+                      <input type="number" name="noTPT" id="noTPT" class="form-control mb-2" />
+
+                      <label for="noSUT" class="fw-bold">No SUT</label>
+                      <input type="number" name="noSUT" id="noSUT" class="form-control mb-2" />
+
+                      <label for="noSRUT" class="fw-bold">No SRUT</label>
+                      <input type="number" name="noSRUT" id="noSRUT" class="form-control mb-2" />
+
+                      <label for="noFrmA" class="fw-bold">No FRM A</label>
+                      <input type="number" name="noFrmA" id="noFrmA" class="form-control mb-2" />
+
+                      <label for="tglFrmA" class="fw-bold">Tanggal FRM A</label>
+                      <input type="date" name="tglFrmA" id="tglFrmA" class="form-control mb-2" />
+
+                      <label for="noPIB" class="fw-bold">No PIB</label>
+                      <input type="number" name="noPIB" id="noPIB" class="form-control mb-2" />
+
+                      <label for="tglPIB" class="fw-bold">Tanggal PIB</label>
+                      <input type="date" name="tglPIB" id="tglPIB" class="form-control mb-2" />
+                    </div>
+
+                    <!-- Form 4 -->
+                    <div>
+                      <label for="nama1" class="fw-bold">Nama</label>
+                      <input type="text" name="nama1" id="nama1" class="form-control mb-2" />
+
+                      <label for="nama2" class="fw-bold">Nama2</label>
+                      <input type="text" name="nama2" id="nama2" class="form-control mb-2" />
+
+                      <label for="Alamat1" class="fw-bold">Alamat</label>
+                      <input type="text" name="Alamat1" id="Alamat1" class="form-control mb-2" />
+
+                      <label for="Alamat2" class="fw-bold">Alamat2</label>
+                      <input type="text" name="Alamat2" id="Alamat2" class="form-control mb-2" />
+
+                      <label for="Provinsi" class="fw-bold">Provinsi</label>
+                      <input type="text" name="Provinsi" id="Provinsi" class="form-control mb-2" />
+
+                      <label for="kabupaten" class="fw-bold">Kabupaten</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="kecamatan" class="fw-bold">Kecamatan</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="kelurahan" class="fw-bold">Kelurahan</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="kodePos" class="fw-bold">Kode Pos</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="noKTP" class="fw-bold">No KTP</label>
+                      <input type="number" name="noKTP" id="noKTP" class="form-control mb-2" />
+                    </div>
+
+                    <!-- Form 5 -->
+                    <div>
+                      <label for="noTelp" class="fw-bold">No Telp</label>
+                      <input type="number" name="noTelp" id="noTelp" class="form-control mb-2" />
+
+                      <label for="email" class="fw-bold">Email</label>
+                      <input type="email" name="email" id="email" class="form-control mb-2" />
+
+                      <label for="pekerjaan" class="fw-bold">Pekerjaan</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="atpm" class="fw-bold">ATPM</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="wTNKB" class="fw-bold">W. TNKB</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="leasing" class="fw-bold">Leasing</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="typeBayar" class="fw-bold">Type Bayar </label>
+                      <input type="radio" name="typeBayar" id="Tunai" value="Tunai" />
+                      <label for="Tunai">Tunai</label>
+                      <input type="radio" name="typeBayar" id="Kredit" value="Kredit" />
+                      <label for="Kredit" class="mb-3">Kredit</label><br />
+
+                      <label for="BanPen">Banpen</label>
+                      <input type="checkbox" name="BanPen" id="Banpen" />
+                      <label for="fromA">Form A</label>
+                      <input type="checkbox" name="fromA" id="fromA" class="mb-3" /><br />
+
+                      <label for="wilBanpen" class="fw-bold">Wil BANPEN</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <div style="display: flex; gap: 0.7rem; margin-top: 1rem">
+                        <a href="" class="btn btn-success">Tambah</a>
+                        <a href="" class="btn btn-primary">Simpan</a>
+                      </div>
+                    </div>
+                  </form>
+
+                  <!-- Tabel -->
+                  <div class="d-flex mt-5" style="gap: 1.5rem">
+                    <div>
+                      <label for="perTanggal" class="fw-bold">Per Tanggal</label><br />
+                      <input type="date" name="perTanggal" id="perTanggal" class="mb-2" /><br />
+                      <span>s/d</span><br />
+                      <input type="date" name="perTanggal" id="perTanggal" class="mb-2" /><br />
+
+                      <label for="wilayah" class="fw-bold">Wilayah</label><br />
+                      <input type="text" name="wilayah" id="wilayah" class="form-control-sm mb-2" /> <br />
+
+                      <input type="radio" name="kendaraan" id="Mobil" value="Mobil" />
+                      <label for="Mobil">Mobil</label>
+                      <input type="radio" name="kendaraan" id="Motor" value="Motor" />
+                      <label for="Motor" class="mb-3">Motor</label><br />
+                    </div>
+
+                    <div style="width: auto">
+                      <label for="KDealer" class="fw-bold">K Dealer</label><br />
+                      <select name="" id="" class="px-5 form-control-sm mb-2 ms-2">
+                        <option value=""></option>
+                        <option value=""></option></select
+                      ><br />
+                      <label for="merk" class="fw-bold">Merk</label><br />
+                      <select name="" id="" class="px-5 form-control-sm mb-2 ms-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+
+                    <div class="ms-5">
+                      <label for="belumDiBayar" class="fw-bold">Belum di Bayar</label><br />
+                      <input type="date" name="belumDiBayar" id="belumDiBayar" class="mb-3" /> <br />
+
+                      <label for="KDealer" class="fw-bold">K Dealer</label><br />
+                      <select name="" id="" class="px-5 form-control-sm mb-2 ms-2">
+                        <option value=""></option>
+                        <option value=""></option></select
+                      ><br />
+                    </div>
+                    <div class="d-flex" style="gap: 9rem">
+                      <div>
+                        <label for="Proses" class="mb-4 mt-4">Proses: <span> </span></label><br />
+                        <label for="Mobil" class="mt-4">Mobil: <span> </span></label>
+                      </div>
+
+                      <div>
+                        <label for="Bayar" class="mb-4 mt-4">Bayar: <span> </span></label><br />
+                        <label for="Motor" class="mt-4">Motor: <span> </span></label>
+                      </div>
+
+                      <div>
+                        <label for="Error" class="mb-4 mt-4">Error: <span> </span></label><br />
+                        <label for="jumlahFaktur" class="mt-4">Jumlah Faktur: <span> </span></label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <table class="table mt-4">
+                    <thead class="table-primary">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Kode Dealer</th>
+                        <th scope="col">No Faktur</th>
+                        <th scope="col">Tgl Faktur</th>
+                        <th scope="col">Merk</th>
+                        <th scope="col">Jenis</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Thn Buat</th>
+                        <th scope="col">Thn Rakit</th>
+                        <th scope="col">Slinder</th>
+                        <th scope="col">Warna</th>
+                        <th scope="col">Bhn Bakar</th>
+                        <th scope="col">No Rangka</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>FK00000</td>
+                        <td>FYI</td>
+                        <td>TFF/0000/ABCD/2023</td>
+                        <td>29/8/2023</td>
+                        <td>TOYOTA</td>
+                        <td>MOBIL</td>
+                        <td>MXG0102FFFA/T</td>
+                        <td>2023</td>
+                        <td>2023</td>
+                        <td>6</td>
+                        <td>HITAM</td>
+                        <td>SOLAR</td>
+                        <td>27828291029</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <a href=""
+                    ><button type="button" class="btn btn-primary"><i class="fa-solid fa-print fa-lg me-1"></i>T.T Faktur</button></a
+                  >
+                  <a href=""
+                    ><button type="button" class="btn btn-primary"><i class="fa-solid fa-print fa-lg me-1"></i>Data Faktur</button></a
+                  >
+                  <a href=""
+                    ><button type="button" class="btn btn-primary"><i class="fa-solid fa-table fa-lg me-1"></i>Excel to Polda</button></a
+                  >
+                  <a href=""
+                    ><button type="button" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass fa-lg me-1"></i>Cari</button></a
+                  >
+                  <a href="" class="hidden"
+                    ><button type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square fa-lg me-1"></i>Edit</button></a
+                  >
+                  <a href="" data-bs-toggle="modal" data-bs-target="#tambahModal"
+                    ><button type="button" class="btn btn-primary"><i class="fa-solid fa-plus fa-lg me-1"></i>Tambah Kendaraan</button></a
+                  >
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Modals Pembuatan Faktur-->
+
+          <!-- modals Tambah -->
+          <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl rounded-4">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Pembuatan Faktur</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Modal content goes here -->
+                  <form class="d-flex" style="font-size: small; gap: 1.5rem">
+                    <!-- Form 2 -->
+                    <div>
+                      <label for="noRangka" class="fw-bold">No Rangka</label>
+                      <input type="number" name="noRangka" id="noRangka" class="form-control mb-2" />
+
+                      <label for="noMesin" class="fw-bold">No Mesin</label>
+                      <input type="number" name="noMesin" id="noMesin" class="form-control mb-2" />
+
+                      <label for="Type" class="fw-bold">Type</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="model" class="fw-bold">Model</label>
+                      <input type="text" name="model" id="model" class="form-control mb-2" />
+
+                      <label for="jenis" class="fw-bold">Jenis</label>
+                      <input type="text" name="jenis" id="jenis" class="form-control mb-2" />
+
+                      <label for="Warna" class="fw-bold">Warna</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="Slinder" class="fw-bold">Slinder</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="tahunBuat" class="fw-bold">Tahun Buat</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="tahunRakit" class="fw-bold">Tahun Rakit</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="bahanBakar" class="fw-bold">Bahan Bakar</label>
+                      <input type="text" name="bahanBakar" id="bahanBakar" class="form-control mb-2" />
+                    </div>
+
+                    <!-- Form 3 -->
+                    <div>
+                      <label for="Merk" class="fw-bold">Merk</label>
+                      <input type="text" name="Merk" id="Merk" class="form-control mb-2" />
+
+                      <label for="jumlahSB" class="fw-bold">Jumlah SB</label>
+                      <input type="number" name="jumlahSB" id="jumlahSB" class="form-control mb-2" />
+
+                      <label for="jumlahRoda" class="fw-bold">Jumlah Roda</label>
+                      <input type="number" name="jumlahRoda" id="jumlahRoda" class="form-control mb-2" />
+
+                      <label for="noTPT" class="fw-bold">No TPT</label>
+                      <input type="number" name="noTPT" id="noTPT" class="form-control mb-2" />
+
+                      <label for="noSUT" class="fw-bold">No SUT</label>
+                      <input type="number" name="noSUT" id="noSUT" class="form-control mb-2" />
+
+                      <label for="noSRUT" class="fw-bold">No SRUT</label>
+                      <input type="number" name="noSRUT" id="noSRUT" class="form-control mb-2" />
+
+                      <label for="noFrmA" class="fw-bold">No FRM A</label>
+                      <input type="number" name="noFrmA" id="noFrmA" class="form-control mb-2" />
+
+                      <label for="tglFrmA" class="fw-bold">Tanggal FRM A</label>
+                      <input type="date" name="tglFrmA" id="tglFrmA" class="form-control mb-2" />
+
+                      <label for="noPIB" class="fw-bold">No PIB</label>
+                      <input type="number" name="noPIB" id="noPIB" class="form-control mb-2" />
+
+                      <label for="tglPIB" class="fw-bold">Tanggal PIB</label>
+                      <input type="date" name="tglPIB" id="tglPIB" class="form-control mb-2" />
+                    </div>
+
+                    <!-- Form 4 -->
+                    <div>
+                      <label for="nama1" class="fw-bold">Nama</label>
+                      <input type="text" name="nama1" id="nama1" class="form-control mb-2" />
+
+                      <label for="nama2" class="fw-bold">Nama2</label>
+                      <input type="text" name="nama2" id="nama2" class="form-control mb-2" />
+
+                      <label for="Alamat1" class="fw-bold">Alamat</label>
+                      <input type="text" name="Alamat1" id="Alamat1" class="form-control mb-2" />
+
+                      <label for="Alamat2" class="fw-bold">Alamat2</label>
+                      <input type="text" name="Alamat2" id="Alamat2" class="form-control mb-2" />
+
+                      <label for="Provinsi" class="fw-bold">Provinsi</label>
+                      <input type="text" name="Provinsi" id="Provinsi" class="form-control mb-2" />
+
+                      <label for="kabupaten" class="fw-bold">Kabupaten</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="kecamatan" class="fw-bold">Kecamatan</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="kelurahan" class="fw-bold">Kelurahan</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="kodePos" class="fw-bold">Kode Pos</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="noKTP" class="fw-bold">No KTP</label>
+                      <input type="number" name="noKTP" id="noKTP" class="form-control mb-2" />
+                    </div>
+
+                    <!-- Form 5 -->
+                    <div>
+                      <label for="noTelp" class="fw-bold">No Telp</label>
+                      <input type="number" name="noTelp" id="noTelp" class="form-control mb-2" />
+
+                      <label for="email" class="fw-bold">Email</label>
+                      <input type="email" name="email" id="email" class="form-control mb-2" />
+
+                      <label for="pekerjaan" class="fw-bold">Pekerjaan</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="atpm" class="fw-bold">ATPM</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="wTNKB" class="fw-bold">W. TNKB</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="leasing" class="fw-bold">Leasing</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <label for="typeBayar" class="fw-bold">Type Bayar </label>
+                      <input type="radio" name="typeBayar" id="Tunai" value="Tunai" />
+                      <label for="Tunai">Tunai</label>
+                      <input type="radio" name="typeBayar" id="Kredit" value="Kredit" />
+                      <label for="Kredit" class="mb-3">Kredit</label><br />
+
+                      <label for="BanPen">Banpen</label>
+                      <input type="checkbox" name="BanPen" id="Banpen" />
+                      <label for="fromA">Form A</label>
+                      <input type="checkbox" name="fromA" id="fromA" class="mb-3" /><br />
+
+                      <label for="wilBanpen" class="fw-bold">Wil BANPEN</label>
+                      <select name="" id="" class="px-5 form-control mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <div style="display: flex; gap: 0.7rem; margin-top: 1rem">
+                        <a href="" class="btn btn-success">Tambah</a>
+                        <a href="" class="btn btn-primary">Simpan</a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Modals Tambah -->
+
+          <!-- Modals Status Polda-->
+          <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Status Polda</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex" style="gap: 1rem">
+                    <!-- Data faktur belum status polda -->
+                    <div class="border rounded p-2">
+                      <p>Data Faktur Belum Status Polda</p>
+
+                      <label for="KDealer" class="fw-bold">Kode Dealer</label>
+                      <select name="" id="" class="px-5 ms-3 mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">WiBANPEN</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col">Tgl Faktur</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Wilayah</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+
+                    <div class="d-flex flex-column">
+                      <a href="" class="btn btn-dark my-5">Cetak </a>
+                      <a href="" class="btn btn-success my-3">Bayar</a>
+                      <a href="" class="btn btn-danger my-3">Batal</a>
+                    </div>
+
+                    <!-- Data belum di cetak polda -->
+                    <div class="border rounded p-2">
+                      <p>Data Faktur Belum Status Polda</p>
+
+                      <div class="d-flex gap-3">
+                        <div>
+                          <label for="KDealer" class="fw-bold">No. Polda</label>
+                          <input type="text" class="form-control" />
+                        </div>
+
+                        <div>
+                          <label for="KDealer" class="fw-bold">Total UNNotice</label>
+                          <input type="text" class="form-control" />
+                          <label for="KDealer" class="fw-bold">Total UNNotice 2</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">KDealer</th>
+                            <th scope="col" class="w-50">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Modals Status Polda-->
+
+          <!-- Modals Status Bayar -->
+          <div class="modal fade" id="myModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Status Bayar</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex" style="gap: 1rem">
+                    <!-- Data faktur belum status polda -->
+                    <div class="border rounded p-2">
+                      <p>Data Faktur Belum Status Polda</p>
+
+                      <label for="KDealer" class="fw-bold">Kode Dealer</label>
+                      <select name="" id="" class="px-5 ms-3 mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">WiBANPEN</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col">Tgl Faktur</th>
+                            <th scope="col">Tgl Polda</th>
+                            <th scope="col">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                      </table>
+
+                    </div>
+
+                    <div class="d-flex flex-column">
+                      <a href="" class="btn btn-success my-3">Bayar</a>
+                      <a href="" class="btn btn-danger my-3">Batal</a>
+                    </div>
+
+                    <!-- Data belum di cetak polda -->
+                    <div class="border rounded p-2">
+                      <p>Data Faktur Belum Status Polda</p>
+
+                      <div class="d-flex gap-3">
+                        <div>
+                          <label for="KDealer" class="fw-bold">No. Polda</label>
+                          <input type="text" class="form-control" />
+                        </div>
+
+                        <div>
+                          <label for="KDealer" class="fw-bold">Total Notice</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col" class="w-50">Nama</th>
+                            <th scope="col">Notice</th>
+                            <th scope="col">Wilayah</th>
+                            <th scope="col">Type</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <button type="submit" id="generateSTCK" class="btn btn-primary mt-2">Tanda Terima STCK</button>
+                  <span id="print-semuadata"></span>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Modals Status Bayar -->
+
+          <!-- Modals Input Nopol -->
+          <div class="modal fade" id="myModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background-color: #f5f5f5">
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-white" id="exampleModalLabel">Input Nopol</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex" style="gap: 1rem">
+                            <!-- Kolom 1 -->
+                            <div class="border rounded p-2" style="flex: 1;">
+                                <form style="font-size: small;">
+                                    <!-- Isi kolom 1 -->
+                                  <div class="mb-2">
+                                    <label for="id" class="fw-bold">Id</label>
+                                    <input type="number" name="id" id="id" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="tanggalInput" class="fw-bold">Tanggal Input</label>
+                                    <input type="date" name="tanggalInput" id="tanggalInput" class="form-control mb-2" />
+                                  </div>
+                                    <div class="mb-2">
+                                    <label for="tanggalInput" class="fw-bold">Kode Dealer</label>
+                                    <input type="date" name="tanggalInput" id="tanggalInput" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="dealer" class="fw-bold">Dealer</label>
+                                    <input type="text" name="dealer" id="dealer" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="cabang" class="fw-bold">Cabang</label>
+                                    <input type="text" name="cabang" id="cabang" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="namaPemilik" class="fw-bold">Nama Pemilik</label>
+                                    <input type="text" name="namaPemilik" id="namaPemilik" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="wilayah" class="fw-bold">Wilayah</label>
+                                    <input type="text" name="wilayah" id="wilayah" class="form-control mb-2" />
+                                  </div>
+                                <div class="mb-2">
+                                  <label for="noType" class="fw-bold">No Type</label>
+                                  <input type="number" name="noType" id="noType" class="form-control mb-2" />
+                                </div>
+                        
+                            </div>
+        
+                            <!-- Kolom 2 -->
+                            <div class="border rounded p-2" style="flex: 1;">
+                                    <!-- Isi kolom 2 -->
+                                  <div class="mb-2">
+                                    <label for="noRangka" class="fw-bold">No Rangka</label>
+                                    <input type="number" name="noRangka" id="noRangka" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="noStatus" class="fw-bold">No Mesin</label>
+                                    <input type="number" name="noStatus" id="noStatus" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="status" class="fw-bold">Status</label>
+                                    <input type="text" name="status" id="status" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="kendaraan" class="fw-bold">Kendaraan</label>
+                                    <input type="text" name="kendaraan" id="kendaraan" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <label for="noSTNK" class="fw-bold">No STNK / Notice</label>
+                                    <input type="number" name="noSTNK" id="noSTNK" class="form-control mb-2" />
+                                  </div>  
+                                  <div class="mb-2">
+                                    <label for="platNomor" class="fw-bold">Plat Nomor</label>
+                                    <input type="number" name="platNomor" id="platNomor" class="form-control mb-2" />
+                                  </div> 
+                                  <div class="mb-2">
+                                    <label for="notice" class="fw-bold">Notice</label>
+                                    <input type="text" name="notice" id="notice" class="form-control mb-2" />
+                                  </div>
+                                  <div class="mb-2">
+                                    <a href=""
+                                ><button type="button" class="btn btn-primary"><i class="fa-solid fa-plus fa-lg me-1"></i> Tambah</button></a
+                            >
+
+                            <a href=""
+                              ><button type="button" class="btn btn-primary"><i class="fa-solid fa-memory fa-lg me-1"></i> Simpan</button></a
+                            >
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Form di atas tabel -->
+        
+                        <!-- Tabel -->
+                        <div class="border rounded p-2 w-100" style="font-size: small">
+                            <div class="d-flex gap-2 me-1">
+                                <!-- Filter untuk tabel di sini -->
+                            </div>
+        
+                            <table class="table mt-4">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th scope="col">KDealer</th>
+                                        <th scope="col">Tgl Faktur</th>
+                                        <th scope="col">Tgl Bayar</th>
+                                        <th scope="col">Tgl PltNmr</th>
+                                        <th scope="col">No.Stnk</th>
+                                        <th scope="col">Plat Nomor</th>
+                                        <th scope="col" class="w-25">Nama</th>
+                                        <th scope="col">Wilayah</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                     
+                                    </tr>
+                                    <!-- Isi tabel dengan data Anda di sini -->
+                                </tbody>
+                            </table>
+                            <p>ini jumlah data</p>
+                        </div>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+          <!-- Akhir Modals Input Nopol -->
+
+          <!-- Modals Tanda Terima STNK -->
+          <div class="modal fade" id="myModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Tanda Terima STNK</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex" style="gap: 1rem; font-size: small">
+                    <!-- Data faktur belum status polda -->
+                    <div class="border rounded p-2 w-50">
+                      <p>Data Faktur Plat Nomor Menunggu STNK</p>
+
+                      <label for="KDealer" class="fw-bold">Kode Dealer</label>
+                      <select name="" id="" class="px-5 ms-3 mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">WiBANPEN</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col" class="w-50">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                      <a href="" class="bg-success p-2 text-white rounded fw-bold text-decoration-none text-center my-3 mb-5">Cetak Ulang</a>
+                      <a href="" class="bg-primary p-2 text-white rounded fw-bold text-decoration-none text-center my-3">Semua</a>
+                      <a href="" class="bg-primary p-2 text-white rounded fw-bold text-decoration-none text-center my-3">Siap Cetak</a>
+                      <a href="" class="bg-danger p-2 text-white rounded fw-bold text-decoration-none text-center my-3">Batal</a>
+                    </div>
+
+                    <!-- Data belum di cetak polda -->
+                    <div class="border rounded p-2 w-50">
+                      <p>Data Faktur Menunggu Cetak Tanda Terima STNK</p>
+
+                      <div class="d-flex gap-3">
+                        <div>
+                          <label for="noTTSNK" class="fw-bold">No. TTSNK</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col" class="w-50">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <button type="submit" id="generateSTCK" class="btn btn-primary mt-2">Tanda Terima STNK</button>
+                  <button type="submit" id="generateSTCK" class="btn btn-primary mt-2">Tanda Terima NOPOL</button>
+                  <span id="print-semuadata"></span>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Tanda Terima STNK -->
+
+          <!-- Modals Menu Tagihan -->
+          <div class="modal fade" id="myModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Tagihan</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex" style="gap: 1rem; font-size: small">
+
+                    <div class="border rounded p-2 w-50">
+                      <p>Data Faktur Sudah Cetak Tanda Terima STNK</p>
+
+                      <label for="KDealer" class="fw-bold">Kode Dealer</label>
+                      <select name="" id="" class="px-5 ms-3 mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">BANPEN</th>
+                            <th scope="col">WiBANPEN</th>
+                            <th scope="col">Tgl SB</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col">Tgl Faktur</th>
+                            <th scope="col" class="w-50">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                      <a href="" class="bg-primary p-2 text-white rounded fw-bold text-decoration-none text-center my-3 mt-5" data-bs-toggle="modal" data-bs-target="#invoice">Invoice</a>
+                      <a href="" class="bg-danger p-2 text-white rounded fw-bold text-decoration-none text-center my-3">Batal</a>
+                    </div>
+
+                    <!-- Data Faktur Sudah Invoice -->
+                    <div class="border rounded p-2 w-50">
+                      <p>Data Faktur Sudah Invoice</p>
+
+                      <div class="d-flex gap-3">
+                        <div>
+                          <label for="noTTSNK" class="fw-bold">No. TTSNK</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">BANPEN</th>
+                            <th scope="col">Wilayah</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col" class="w-50">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <button type="submit" id="generateSTCK" class="btn btn-primary mt-2">Print Tanda Terima Tagihan</button>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Menu Tagihan -->
+
+          <!-- Modals Invoice -->
+          <div class="modal fade" id="invoice" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg rounded-4">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Invoice</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex"></div>
+
+                  <!-- Modal content goes here -->
+                  <form class="d-flex" style="font-size: small; gap: 1.5rem">
+
+                    
+                  </form>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>           
+          </div>
+          <!-- Akhir Modal Invoice -->
+
+
+          <!-- Modals Menu BPKB -->
+          <div class="modal fade" id="myModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background-color: #f5f5f5">
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-white" id="exampleModalLabel">Input No BPKB</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex" style="gap: 1rem">
+                            <!-- Kolom 1 -->
+                            <div class="border rounded p-2" style="flex: 1;">
+                                <form style="font-size: small;">
+                                <div class="mb-2">
+                                  <label for="id" class="fw-bold">Id</label>
+                                  <input type="number" name="id" id="id" class="form-control mb-2" />
+                                </div>
+                                <div class="mb-2">
+                                  <label for="tanggalInput" class="fw-bold">Tanggal</label>
+                                  <input type="date" name="tanggalInput" id="tanggalInput" class="form-control mb-2" />
+                                </div>
+                                <div class="mb-2">
+                                  <label for="tanggalInput" class="fw-bold">Kode Dealer</label>
+                                  <input type="date" name="tanggalInput" id="tanggalInput" class="form-control mb-2" />
+                        </div>
+                                <div class="mb-2">
+                                  <label for="dealer" class="fw-bold">Dealer</label>
+                                  <input type="text" name="dealer" id="dealer" class="form-control mb-2" />
+                                </div>
+                                <div class="mb-2">
+                                  <label for="cabang" class="fw-bold">Cabang</label>
+                                  <input type="text" name="cabang" id="cabang" class="form-control mb-2" />
+                                </div>
+                                <div class="mb-2">
+                                  <label for="namaPemilik" class="fw-bold">Nama Pemilik</label>
+                                  <input type="text" name="namaPemilik" id="namaPemilik" class="form-control mb-2" />
+                                </div>
+                                <div class="mb-2">
+                                <label for="wilayah" class="fw-bold">Wilayah</label>
+                                <input type="text" name="wilayah" id="wilayah" class="form-control mb-2" />
+                              </div>
+                   
+                            </div>
+        
+                            <!-- Kolom 2 -->
+                            <div class="border rounded p-2" style="flex: 1;">
+                              <div class="mb-2">
+                              <label for="noType" class="fw-bold">No Type</label>
+                              <input type="number" name="noType" id="noType" class="form-control mb-2" />
+                              </div>
+                              <div class="mb-2">
+                              <label for="noRangka" class="fw-bold">No Rangka</label>
+                              <input type="number" name="noRangka" id="noRangka" class="form-control mb-2" />
+                              </div>
+                              <div class="mb-2">
+                              <label for="noStatus" class="fw-bold">No Mesin</label>
+                              <input type="number" name="noStatus" id="noStatus" class="form-control mb-2" />
+                              </div>
+                              <div class="mb-2">
+                              <label for="status" class="fw-bold">Status</label>
+                              <input type="text" name="status" id="status" class="form-control mb-2" />
+                              </div>
+                              <div class="mb-2">
+                              <label for="kendaraan" class="fw-bold">Kendaraan</label>
+                              <input type="text" name="kendaraan" id="kendaraan" class="form-control mb-2" />
+                              </div>
+                              <div class="mb-2">
+                              <label for="noSTNK" class="fw-bold">No BPKB
+                              <input type="number" name="noBPKB" id="noBPKB" class="form-control mb-2" />
+                              </div>   
+                              <div class="mb-2">
+                                <a href=""
+                            ><button type="button" class="btn btn-primary"><i class="fa-solid fa-plus fa-lg me-1"></i> Tambah</button></a
+                        >
+
+                        <a href=""
+                          ><button type="button" class="btn btn-primary"><i class="fa-solid fa-memory fa-lg me-1"></i> Simpan</button></a
+                        >
+                              </div>
+                            </form>
+                            </div>
+                        </div>
+                        <!-- Form di atas tabel -->
+        
+                        <!-- Tabel -->
+                        <div class="border rounded p-2 w-100" style="font-size: small">
+                            <table class="table mt-4">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th scope="col">KDealer</th>
+                                        <th scope="col">Tgl Input</th>
+                                        <th scope="col">Tgl polda</th>
+                                        <th scope="col">Tgl bayar</th>
+                                        <th scope="col">Tgl BPKB</th>
+                                        <th scope="col">No BPKB</th>
+                                        <th scope="col" class="w-25">Nama</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>FYI</td>
+                                        <td>31/08/2023</td>
+                                        <td>29/08/2023</td>
+                                        <td>29/08/2023</td>
+                                        <td>29/08/2023</td>
+                                        <td>18817202829</td>
+                                        <td>Ibrahim</td>
+                                    </tr>
+                                    <!-- Isi tabel dengan data Anda di sini -->
+                                </tbody>
+                            </table>
+                            <!-- Isi elemen-elemen di bawah tabel di sini -->
+                        </div>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+          <!-- Akhir modals BPKB -->
+
+          <!-- Modal Tanda Terima BPKB -->
+          <div class="modal fade" id="myModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content" style="background-color: #f5f5f5">
+                <div class="modal-header bg-primary">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Tanda Terima BPKB</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex" style="gap: 1rem; font-size: small">
+                    <!-- Data faktur belum status polda -->
+                    <div class="border rounded p-2 w-50">
+                      <p>Data Faktur Plat Nomor Menunggu BPKB</p>
+
+                      <label for="KDealer" class="fw-bold">Kode Dealer</label>
+                      <select name="" id="" class="px-5 ms-3 mb-2">
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">WiBANPEN</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col" class="w-50">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                      <a href="" class="bg-success p-2 text-white rounded fw-bold text-decoration-none text-center my-3 mb-5">Cetak Ulang</a>
+                      <a href="" class="bg-primary p-2 text-white rounded fw-bold text-decoration-none text-center my-3">Semua</a>
+                      <a href="" class="bg-primary p-2 text-white rounded fw-bold text-decoration-none text-center my-3">Siap Cetak</a>
+                      <a href="" class="bg-danger p-2 text-white rounded fw-bold text-decoration-none text-center my-3">Batal</a>
+                    </div>
+
+                    <!-- Data belum di cetak polda -->
+                    <div class="border rounded p-2 w-50">
+                      <p>Data Faktur Menunggu Cetak Tanda Terima BPKB</p>
+
+                      <div class="d-flex gap-3">
+                        <div>
+                          <label for="noTTSNK" class="fw-bold">No. TTBPKB</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                      </div>
+
+                      <table class="table mt-4">
+                        <thead class="table-primary">
+                          <tr>
+                            <th scope="col">KDealer</th>
+                            <th scope="col">Tgl Input</th>
+                            <th scope="col" class="w-50">Nama</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <button type="submit" id="generateSTCK" class="btn btn-primary mt-2">Tanda Terima STNK</button>
+                  <button type="submit" id="generateSTCK" class="btn btn-primary mt-2">Tanda Terima NOPOL</button>
+                  <a href=""
+                    ><button type="button" class="btn btn-primary mt-2"><i class="fa-solid fa-print fa-lg me-1"></i>print</button></a
+                  >
+                  <a href=""
+                    ><button type="button" class="btn btn-primary mt-2"><i class="fa-solid fa-print fa-lg me-1"></i>PDF</button></a
+                  >
+                  <a href=""
+                    ><button type="button" class="btn btn-primary mt-2"><i class="fa-solid fa-table fa-lg me-1"></i>Excel</button></a
+                  >
+                  <a href=""
+                    ><button type="button" class="btn btn-primary mt-2"><i class="fa-solid fa-magnifying-glass fa-lg me-1"></i>Cari</button></a
+                  >
+                  <a href="" class="hidden"
+                    ><button type="button" class="btn btn-primary mt-2"><i class="fa-solid fa-pen-to-square fa-lg me-1"></i>Edit</button></a
+                  >
+                  <span id="print-semuadata"></span>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir Modal -->
+        </section>
+        <!-- Akhir Content -->
+      </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+
+    <!-- Script Print JS -->
+    <script src="../assets/js/print.min.js"></script>
+    <script>
+      document.getElementById('generateSTCK').addEventListener('click', function () {
+        printJS({
+          printable: 'print-semuadata',
+          type: 'html',
+          header: `<h1 class="header">Tanda Terima STCK</h1>`,
+          style: `*{font-family: 'Roboto', sans-serif;} .logo{display: flex;}.logo img{width: 70px;height: 70px; }.logo h1{margin-left: 10px;font-size: 30px;} .header{text-align: center;}`,
+        });
+      });
+    </script>
+  </body>
+</html>
